@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세로디스플레이</title>
+    <style>
+        #wrapper{
+            width: 120px;
+            height: 320px;
+            margin: auto;
+            background: rgb(252, 235, 210);
+            text-align: center;
+            font-size: 25px;
+            padding-left: 5px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        let arr=new Array(5);
+        let divarr=[];
+
+        function move(){
+            for(let a=0; a<divarr.length; a++){
+                divarr[a].style.top=parseInt(divarr[a].style.top)+1+"px";
+
+                if(parseInt(divarr[a].style.top)>=420){
+                    divarr[a].style.top=-105+"px";
+                }
+            }
+        }
+
+        function init(){
+            for(let i=0; i<arr.length; i++){
+                div=document.createElement("div");
+                div.innerText=i;
+                div.style.width=100+"px";
+                div.style.height=100+"px";
+                div.style.margin=5+"px";
+                div.style.position="absolute";
+                div.style.background="rgb(241, 205, 255)";
+                div.style.top=(i*105)+"px";
+
+                let wrapper=document.getElementById("wrapper");
+                wrapper.appendChild(div);
+
+                divarr.push(div);
+            }
+        }
+
+        addEventListener("load", function(){
+            init();
+            setInterval("move()", 10);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>

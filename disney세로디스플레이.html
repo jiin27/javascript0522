@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>disney세로디스플레이</title>
+    <style>
+        #wrapper{
+            width: 120px;
+            height: 320px;
+            margin: auto;
+            background: rgb(252, 210, 227);
+            padding-left: 5px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        let arr=new Array(5);
+        let imgArr=[];
+
+        function move(){
+            for(let a=0; a<imgArr.length; a++){
+                imgArr[a].style.top=parseInt(imgArr[a].style.top)+1+"px";
+
+                if(parseInt(imgArr[a].style.top)>=420){
+                    imgArr[a].style.top=-105+"px";
+                }
+            }
+        }
+
+        function init(){
+            for(let i=0; i<arr.length; i++){
+                img=document.createElement("img");
+                img.src="../images/disney/d"+i+".jpg";
+                img.style.width=100+"px";
+                img.style.height=100+"px";
+                img.style.margin=5+"px";
+                img.style.position="absolute";
+                img.style.background="rgb(241, 205, 255)";
+                img.style.top=(i*105)+"px";
+
+                let wrapper=document.getElementById("wrapper");
+                wrapper.appendChild(img);
+
+                imgArr.push(img);
+            }
+        }
+
+        addEventListener("load", function(){
+            init();
+            setInterval("move()", 10);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>

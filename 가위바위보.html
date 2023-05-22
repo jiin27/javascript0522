@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보</title>
+    <style>
+        #wrapper{
+            width: 300px;
+            height: 300px;
+            background-color: whitesmoke;
+            border-radius: 15px;
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+    <script src="../js/lib.js"></script>
+    <script>
+        let img;
+
+        //가위,바위,보 사진에 대해 메모리에 순서를 생성해보자 -> 배열을 만들어보자
+        //js 배열을 생성하는 방법은 두 가지가 있다.
+        //1) Array() 객체를 이용하는 방법_반복문 적용 가능
+        //2) [데이터, 데이터...] 선언과 동시에 할당하는 방법
+        //let arr=new Array(3;) 과 동일한 목적
+        //arr[0]="가위.png"...
+        let arr=["가위.png","바위.png","보.png"];
+
+        //사진 출력하기
+        function next(){
+            //이미 문서에 존재하는 img객체의 src를 변경해본다.
+            let r=Math.random(); //0~ 1미만의 난수 
+            //즉 난수값의 1을 넘어서지 못하는 실수이므로, 이 난수값에 만일 4를 곱하면 4미만의 난수가 발생.
+            console.log("r=", parseInt(r*arr.length));
+            img.src="../images/"+arr[getRandom(r*arr.length)];
+        }
+
+        //초기화
+        function init(){
+            img=document.createElement("img");
+            let wrapper=document.getElementById("wrapper");
+            wrapper.appendChild(img);
+        }
+
+        addEventListener("load", function(){
+            init();      
+
+            //버튼에 이벤트 연결하기
+            let bt=document.querySelector("button");
+            bt.addEventListener("click", function(){
+                next();
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <button>결과보기</button>
+    <div id="wrapper"></div>
+</body>
+</html>

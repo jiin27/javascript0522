@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과일출력</title>
+    <script>
+        /*
+        변수 선언의 단점
+        - 데이터를 메모리에 올릴 때, 반드시 중복되지 않은 유일한 이름을 이용하여 올려야 함. 
+        -> 처리할 대상의 데이터 양이 많을 때, 효율적이지 못함. 즉, 반복문 등을 사용할 수 없다.
+        */
+        /*
+         let f="사과";
+         let b="복숭아";
+         let s="수박";
+         let d="딸기";
+         let g="참외";
+         let h="포도";
+         let j="자두";
+         let k="키위";
+         let e="오렌지";
+         let t="망고";
+ 
+         document.write(f);
+         document.write(b);
+         document.write(s);
+         document.write(d);
+         document.write(g);
+         document.write(h);
+         document.write(j);
+         document.write(k);
+         document.write(e);
+         document.write(t);
+         */
+ 
+        /*
+        1) 배열(array)란?
+            현실에서는 사물을 순서있게 배치하는 것을 의미하며,
+            전산에서는 그 대상이 데이터다.
+        */
+
+        /*
+        2) js에서 배열을 선언하는 방법
+            모든 프로그래밍 언어마다 배열을 지원하며
+            js에서는 아래와 같은 형식을 갖는다
+         ex) let arr=new Array(3); 크기가 
+         ex2) let frutis=new Array(10);
+                fruits[2] -> 전산에서는 0부터 세기 때문에, 통상적으로 3번째가 전산에서는 2번 칸.
+        */
+
+        
+        let fruits=new Array(10);
+        fruits[0]="사과";
+        fruits[1]="복숭아";
+        fruits[2]="수박";
+        fruits[3]="딸기";
+        fruits[4]="참외";
+        fruits[5]="포도";
+        fruits[6]="자두";
+        fruits[7]="키위";
+        fruits[8]="오렌지";
+        fruits[9]="망고";
+
+        for(let i=0; i<10; i++){
+            document.write(fruits[i]);
+        }
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
